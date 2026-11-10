@@ -20,7 +20,7 @@ Open **http://localhost:3000**. Use this exact origin by default; `127.0.0.1` is
 
 ```dotenv
 GEMINI_API_KEY=your_actual_key
-GEMINI_MODEL=gemini-2.5-flash
+GEMINI_MODEL=gemini-flash-lite-latest
 ```
 
 Get a key in Google AI Studio. Availability, quotas, pricing, and grounding support depend on your account/model; this project makes no free-tier promise. Model ID is configurable because models change over time. A missing key leaves the UI usable but real chat returns a clear configuration error. The key never goes into browser JavaScript, HTML, chat prompts, history, or logs.
@@ -165,13 +165,3 @@ Stage streaming starts quickly, but final answer latency depends on Gemini and s
 
 Before a public production launch: authenticated accounts, Postgres transactions, managed secrets, HTTPS, global/IP/tenant quotas at an edge proxy, bounded storage/retention, backup/restore tests, load testing, privacy review, and adversarial live evaluations are required. See `docs/DEPLOYMENT.md`.
 
-## Submission checklist
-
-- [ ] Add a real server-side key locally; do not commit it.
-- [ ] Run local checks and the live behavioral rubric.
-- [ ] Be able to explain every code path; use `docs/EXPLAIN_IT.md`.
-- [ ] Create a public GitHub repository containing this source and `DESIGN.md`.
-- [ ] Ensure no `.env`, `data/`, keys, or personal chat exports are tracked.
-- [ ] Submit the repository link via the challenge application form.
-
-AI coding tools are allowed by the brief, but ownership matters: read and change the design yourself. The quality of your explanation and actual agent behavior matter more than extra features.
