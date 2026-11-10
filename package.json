@@ -1,0 +1,16 @@
+{
+  "name": "recall-web-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Temporal-memory chat agent with Gemini web grounding",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test",
+    "check": "node --check src/server.js && node --check public/app.js"
+  }
+}
