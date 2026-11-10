@@ -63,6 +63,12 @@ Memory retrieval is application infrastructure, not another model tool. No shell
 - **Grounding, not decoration:** source links come from provider metadata; inline citation labels are inserted only when returned support text matches the answer. This avoids trusting model-invented URLs or citation IDs. Missing support is labelled, not hidden.
 - **One key:** Gemini supplies both generation and the Google Search tool. See `docs/API_NOTES.md` for upstream documentation.
 
+
+## Architecture
+
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the visual architecture and request-lifecycle diagrams.
+
+
 ## Files and responsibilities
 
 | File | Responsibility |
