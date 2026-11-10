@@ -23,19 +23,19 @@ sequenceDiagram
     participant B as Browser
     participant H as HTTP boundary
     participant M as Memory retriever
-    participant G as Gemini + Google Search
+    participant G as Gemini with Google Search
     participant S as Session store
 
     B->>H: POST /api/chat
-    H->>H: Validate origin, cookie, JSON, timezone, limits
+    H->>H: Validate request
     H->>M: Retrieve dated evidence
     M->>S: Read timestamped conversations
-    M-->>H: Selected memories + resolvedDay + matchedDay
-    H->>G: One generation; Search available
-    G-->>H: Answer + grounding metadata
-    H->>H: Insert only supported citations
-    H->>S: Atomically save user + assistant pair
-    H-->>B: progress, then answer event
+    M-->>H: Selected memories and date context
+    H->>G: Generate answer with Search available
+    G-->>H: Answer and grounding metadata
+    H->>H: Insert supported citations
+    H->>S: Save user and assistant messages
+    H-->>B: Send progress and answer events
 ```
 
 ## Components
